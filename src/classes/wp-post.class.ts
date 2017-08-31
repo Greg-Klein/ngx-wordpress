@@ -101,7 +101,7 @@ export class WpPost {
     if (this.featuredMedia() && this.post._embedded) {
 
       let featuredImage: WpMedia = this.post._embedded['wp:featuredmedia'][0];
-      if (featuredImage) {
+      if (featuredImage && featuredImage.media_details) {
         /** Get featuredImage of size (size) */
         if (featuredImage.media_details.sizes[size]) {
           return featuredImage.media_details.sizes[size].source_url;
